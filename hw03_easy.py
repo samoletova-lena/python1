@@ -25,32 +25,13 @@ print(my_round(1.1275, 3))
 
 
 
-'''import random
-random.seed(a=None, version=2)
-ticket_number=[]
-a=0
-while len(ticket_number)<6:
-    a=random.randint(0,9)
-    ticket_number.append(a)
-print(ticket_number)'''
 
-'''def lucky_ticket(ticket_number):
-    sum1=0
-    sum2=0
-    sum1=ticket_number[i]+ticket_number[0]
-    for i in range(len(ticket_number[3:])):
-        sum2=ticket_number[i]+ticket_number[0]        
-    if sum1==sum2:
-        return true
-if lucky_ticket:
-    print("Счастливый билет!")'''
+
 
 
 def lucky_ticket(ticket_number):
-    ticket_number = str(ticket_number)
-    list1 = ticket_number.split()
-    print(list1)
-
+    list1=[]
+    list1 = list(ticket_number)
     z=0
     sum1=0
     sum2=0
@@ -65,10 +46,15 @@ def lucky_ticket(ticket_number):
     if sum1==sum2:
         return True
 
-ticket_number =123006
+ticket_number = input("Введите номер билета: ")
+
+if len(ticket_number)>6:
+    print ("Неверный номер")
+    ticket_number = input("Введите шестизначный номер билета: ")
+
 if lucky_ticket(ticket_number) == True:
     print("Счастливый билет!")
 
-print(lucky_ticket(123006))
+#print(lucky_ticket(123006))
 #print(lucky_ticket(12321))
 #print(lucky_ticket(436751))
