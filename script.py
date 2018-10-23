@@ -9,7 +9,11 @@ def print_help():
 	print("remfile - удаление файла")
 	print("ls - где я")
 
+def ping():
+	print("pong")
 
+def ls(): #текущая директория
+	print("Вы здесь", os.getcwd())
 
 def make_dir():
 	if not dir_name:
@@ -21,14 +25,6 @@ def make_dir():
 		print('директория {} создана'.format(dir_name))
 	except FileExistsError:
 		print('директория {} уже существует'.format(dir_name))
-
-
-def ping():
-	print("pong")
-
-def ls(): #текущая директория
-	os.getcwd()
-	print("Вы здесь", os.path())
 
 def copy():
 	f = open(newfilename, 'w+', encoding='UTF-8') 
@@ -67,7 +63,7 @@ try:
 	if len(sys.argv) > 3:
 		newfilename = sys.argv[3]
 except FileExistsError:
-	filename = None
+	newfilename = None
 
 try:
 	filename_del = sys.argv[2] #удаление файла
